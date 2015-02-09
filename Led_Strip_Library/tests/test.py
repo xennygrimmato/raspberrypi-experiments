@@ -21,10 +21,10 @@ class TestLEDStrip(unittest.TestCase):
 	##
 	# testNumPixels	Tests if the number of pixels is set properly.
 	def testNumPixels(self):
-		spidev = file(self.spidevFile, "wb")
+		#spidev = open(self.spidevFile, "wb")
+		self.assertRaises(IOError, open, self.spidevFile, "wb")
 		leds = ledstrip.LEDStrip(self.numberOfPixels,spidev)
-		self.assertTrue(leds.spi,"SPI interface could not be opened")
-		self.assertTrue(self.numberOfPixels==leds.numPixels(),"Number of pixels do not match")
+		self.assertEqual(self.numberOfPixels,leds.numPixels(),"Number of pixels do not match")
 
 if __name__ == "__main__":
 	unittest.main()
