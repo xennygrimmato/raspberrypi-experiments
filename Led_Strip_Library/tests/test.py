@@ -6,8 +6,8 @@ from ledStrip import ledstrip
 class TestLEDStrip(unittest.TestCase):
 
 	##
-	# setUp					Sets the initial values for number of leds and spidev file path.
-	def setUp(self):
+	# setup					Sets the initial values for number of leds and spidev file path.
+	def setup(self):
 		self.numberOfPixels = 32
 		self.spidevFile = "/dev/spidev0.0"
 		self.spidev = open(self.spidevFile, "wb") # spidev is the file object of the SPI connection
