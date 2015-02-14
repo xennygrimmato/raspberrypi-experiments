@@ -1,3 +1,4 @@
 language: python
 python:
   - "2.7"
+script: python Led_Strip_Library/tests/test.py
